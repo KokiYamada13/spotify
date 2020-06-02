@@ -1,0 +1,16 @@
+<h1>検索結果</h1>
+<div>
+  <% if @musics.present? %>
+      <div>
+        <h3><%= @musics.name %></h3>
+          <% if @musics.images.any?%>
+            <% image = @musics.images[1]%>
+            <%= image_tag(image["url"])%>
+          <%else%>
+            <%= image_tag("default.jpg")%>
+          <%end%>
+      </div>
+  <% else %>
+    <div>Sorryyyyyy.....</div>
+  <% end %>
+</div>
